@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35119FB21A49E3E40078D380 /* BNRQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35119FB01A49E3E40078D380 /* BNRQuizViewController.m */; };
+		35119FB31A49E3E40078D380 /* BNRQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35119FB11A49E3E40078D380 /* BNRQuizViewController.xib */; };
 		3586E2A01A2CE4D300B35EBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3586E29F1A2CE4D300B35EBD /* Foundation.framework */; };
 		3586E2A21A2CE4D300B35EBD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3586E2A11A2CE4D300B35EBD /* CoreGraphics.framework */; };
 		3586E2A41A2CE4D300B35EBD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3586E2A31A2CE4D300B35EBD /* UIKit.framework */; };
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35119FAF1A49E3E40078D380 /* BNRQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRQuizViewController.h; sourceTree = "<group>"; };
+		35119FB01A49E3E40078D380 /* BNRQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRQuizViewController.m; sourceTree = "<group>"; };
+		35119FB11A49E3E40078D380 /* BNRQuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRQuizViewController.xib; sourceTree = "<group>"; };
 		3586E29C1A2CE4D300B35EBD /* HypnoNerd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypnoNerd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3586E29F1A2CE4D300B35EBD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3586E2A11A2CE4D300B35EBD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +132,9 @@
 				3586E2D41A2CE73400B35EBD /* BNRReminderViewController.h */,
 				3586E2D51A2CE73400B35EBD /* BNRReminderViewController.m */,
 				3586E2D71A2CE85A00B35EBD /* BNRReminderViewController.xib */,
+				35119FAF1A49E3E40078D380 /* BNRQuizViewController.h */,
+				35119FB01A49E3E40078D380 /* BNRQuizViewController.m */,
+				35119FB11A49E3E40078D380 /* BNRQuizViewController.xib */,
 				3586E2B11A2CE4D300B35EBD /* Images.xcassets */,
 				3586E2A61A2CE4D300B35EBD /* Supporting Files */,
 			);
@@ -238,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35119FB31A49E3E40078D380 /* BNRQuizViewController.xib in Resources */,
 				3586E2D81A2CE85A00B35EBD /* BNRReminderViewController.xib in Resources */,
 				3586E2AA1A2CE4D300B35EBD /* InfoPlist.strings in Resources */,
 				3586E2B21A2CE4D300B35EBD /* Images.xcassets in Resources */,
@@ -261,6 +270,7 @@
 			files = (
 				3586E2D31A2CE59800B35EBD /* BNRHypnosisViewController.m in Sources */,
 				3586E2AC1A2CE4D300B35EBD /* main.m in Sources */,
+				35119FB21A49E3E40078D380 /* BNRQuizViewController.m in Sources */,
 				3586E2B01A2CE4D300B35EBD /* BNRAppDelegate.m in Sources */,
 				3586E2D61A2CE73400B35EBD /* BNRReminderViewController.m in Sources */,
 				3586E2D01A2CE50F00B35EBD /* BNRHypnosisView.m in Sources */,
@@ -460,6 +470,7 @@
 				3586E2CA1A2CE4D300B35EBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3586E2CB1A2CE4D300B35EBD /* Build configuration list for PBXNativeTarget "HypnoNerdTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +479,7 @@
 				3586E2CD1A2CE4D300B35EBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
