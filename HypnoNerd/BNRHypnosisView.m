@@ -8,11 +8,6 @@
 
 #import "BNRHypnosisView.h"
 
-@interface BNRHypnosisView ()
-
-@property (strong, nonatomic) UIColor *circleColor;
-
-@end
 
 @implementation BNRHypnosisView
 

@@ -16,9 +16,21 @@
     // Create a view
     CGRect frame = [UIScreen mainScreen].bounds;
     BNRHypnosisView *backgroundView = [[BNRHypnosisView alloc] initWithFrame:frame];
-    
+
     // Set it as *the* view of this view controller
     self.view = backgroundView;
+    
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Red", @"Green", @"Blue"]];
+    
+    [self.view addSubview:segmentedControl];
+    
+    CGRect oldFrame = segmentedControl.frame;
+    CGRect newFrame = CGRectMake((frame.size.width - oldFrame.size.width) / 2.0, 40, oldFrame.size.width, oldFrame.size.height);
+    
+    segmentedControl.frame = newFrame;
+    segmentedControl.backgroundColor = [UIColor whiteColor];
+    segmentedControl.momentary = YES;
+    [segmentedControl addTarget:self action:@selector(colorChange:) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void)viewDidLoad
@@ -27,6 +39,7 @@
     [super viewDidLoad];
     
     NSLog((@"BNRHypnosisViewController loaded its view"));
+    
 }
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,6 +59,17 @@
     }
     
     return self;
+}
+
+-(void)colorChange:(UISegmentedControl *)sender
+{
+    NSLog(@"SelectedIndex = %i", sender.selectedSegmentIndex);
+    
+    BNRHypnosisView *hypnosisView = (BNRHypnosisView *) self.view;
+
+    if (sender.selectedSegmentIndex == 0) hypnosisView.circleColor = [UIColor redColor];
+    else if (sender.selectedSegmentIndex == 1) hypnosisView.circleColor = [UIColor greenColor];
+    else hypnosisView.circleColor = [UIColor blueColor];
 }
 
 @end
