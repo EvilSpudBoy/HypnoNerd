@@ -17,20 +17,19 @@
     CGRect frame = [UIScreen mainScreen].bounds;
     BNRHypnosisView *backgroundView = [[BNRHypnosisView alloc] initWithFrame:frame];
 
-    // Set it as *the* view of this view controller
-    self.view = backgroundView;
-    
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Red", @"Green", @"Blue"]];
     
-    [self.view addSubview:segmentedControl];
-    
     CGRect oldFrame = segmentedControl.frame;
-    CGRect newFrame = CGRectMake((frame.size.width - oldFrame.size.width) / 2.0, 40, oldFrame.size.width, oldFrame.size.height);
     
-    segmentedControl.frame = newFrame;
+    segmentedControl.frame = CGRectMake((frame.size.width - oldFrame.size.width) / 2.0, 40, oldFrame.size.width, oldFrame.size.height);
     segmentedControl.backgroundColor = [UIColor whiteColor];
     segmentedControl.momentary = YES;
     [segmentedControl addTarget:self action:@selector(colorChange:) forControlEvents:UIControlEventValueChanged];
+    
+    [backgroundView addSubview:segmentedControl];
+    
+    // Set it as *the* view of this view controller
+    self.view = backgroundView;
 }
 
 -(void)viewDidLoad
