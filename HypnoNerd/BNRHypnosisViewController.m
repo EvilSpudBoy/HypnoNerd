@@ -9,6 +9,10 @@
 #import "BNRHypnosisViewController.h"
 #import "BNRHypnosisView.h"
 
+@interface BNRHypnosisViewController () <UITextFieldDelegate>
+
+@end
+
 @implementation BNRHypnosisViewController
 
 -(void)loadView
@@ -22,9 +26,13 @@
     
     // Setting the border style on the text field will allow us to see it more easily
     textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.placeholder = @"Hypnotize me";
+    textField.returnKeyType = UIReturnKeyDone;
+    
+    textField.delegate = self;
+    
     [backgroundView addSubview:textField];
     
-    // Set it as *the* view of this view controller
     self.view = backgroundView;
 }
 
@@ -53,6 +61,48 @@
     }
     
     return self;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self drawHypnoticMessage:textField.text];
+    
+    textField.text = @"";
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+-(void)drawHypnoticMessage:(NSString *)message
+{
+    for (int i = 0; i < 20; i++) {
+        UILabel *messageLabel = [[UILabel alloc] init];
+        
+        // Configure the label's colors and text
+        messageLabel.backgroundColor = [UIColor clearColor];
+        messageLabel.textColor = [UIColor whiteColor];
+        messageLabel.text = message;
+        
+        // This method resizes the lable, which will be relative
+        // to the text that it is displaying
+        [messageLabel sizeToFit];
+        
+        // Get a random x value that fits within the hypnosis view's width
+        int width = self.view.bounds.size.width - messageLabel.bounds.size.width;
+        int x = arc4random() % width;
+        
+        // Get a random y value that fits within the hypnosis view's  height
+        int height = self.view.bounds.size.height - messageLabel.bounds.size.height;
+        int y = arc4random() % height;
+        
+        // Update the label's frame
+        CGRect frame = messageLabel.frame;
+        frame.origin = CGPointMake(x, y);
+        messageLabel.frame = frame;
+        
+        //Add the label to the hierachy
+        [self.view addSubview:messageLabel];
+    }
 }
 
 @end
