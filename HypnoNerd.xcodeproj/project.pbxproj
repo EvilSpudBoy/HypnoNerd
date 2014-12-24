@@ -210,7 +210,11 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Big Nerd Ranch";
 				TargetAttributes = {
+					3586E29B1A2CE4D300B35EBD = {
+						DevelopmentTeam = L7M9HJQW5B;
+					};
 					3586E2B61A2CE4D300B35EBD = {
+						DevelopmentTeam = L7M9HJQW5B;
 						TestTargetID = 3586E29B1A2CE4D300B35EBD;
 					};
 				};
@@ -405,6 +409,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HypnoNerd.app/HypnoNerd";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -418,6 +424,7 @@
 				);
 				INFOPLIST_FILE = "HypnoNerdTests/HypnoNerdTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -427,6 +434,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HypnoNerd.app/HypnoNerd";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -436,6 +445,7 @@
 				GCC_PREFIX_HEADER = "HypnoNerd/HypnoNerd-Prefix.pch";
 				INFOPLIST_FILE = "HypnoNerdTests/HypnoNerdTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -460,6 +470,7 @@
 				3586E2CA1A2CE4D300B35EBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3586E2CB1A2CE4D300B35EBD /* Build configuration list for PBXNativeTarget "HypnoNerdTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +479,7 @@
 				3586E2CD1A2CE4D300B35EBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

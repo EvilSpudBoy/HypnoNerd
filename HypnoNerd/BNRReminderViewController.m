@@ -51,6 +51,12 @@
 
 -(IBAction)addReminder:(id)sender
 {
+    if ([UIApplication instancesRespondToSelector:@selector(currentUserNotificationSettings)]) {
+        if ([[UIApplication sharedApplication] currentUserNotificationSettings] == nil) {
+            return;
+        }
+    }
+
     NSDate *date = self.datePicker.date;
     NSLog(@"Setting a reminder for %@", date);
     
